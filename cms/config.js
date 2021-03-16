@@ -5,8 +5,8 @@ export default {
     // swap out "git-gateway" with "test-repo" and navigate to localhost:3000/admin
     // to view Netlify CMS locally (you can't make changes or read actual content from Git
     // this way, but it's great to verify how things will look).
-    name: 'test-repo',
-    // name: 'git-gateway',
+    // name: 'test-repo',
+    name: 'git-gateway',
     branch: 'main'
   },
   media_folder: 'public/img',
