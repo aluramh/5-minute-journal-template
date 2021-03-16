@@ -5,7 +5,7 @@ import { CMS_NAME } from '../../lib/constants'
 
 import ErrorPage from 'next/error'
 import Head from 'next/head'
-import Layout from '../../components/layout'
+import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import Header from '../../components/Header'
 import PostHeader from '../../components/Post/Header'
