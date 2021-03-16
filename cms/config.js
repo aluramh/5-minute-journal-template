@@ -15,7 +15,7 @@ export default {
     {
       name: 'blog-posts',
       label: 'Blog Posts',
-      folder: 'src/_posts',
+      folder: '_posts',
       create: true,
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
       fields: [
