@@ -1,39 +1,43 @@
 import PrintMarkdown from '../components/markdown/PrintMarkdown'
 import {
   getDynamicPageContentBySlug,
-  getAllDynamicPages
+  getAllDynamicPages,
+  getPageContentBySlug
 } from '../lib/markdown'
+import { getAllPosts } from '../lib/api'
 
-export default function IndexPage ({ page }) {
-  const { title, description, slug, content } = page
+export default function IndexPage (props) {
+  const { allPosts } = props
 
   return (
     <div>
-      <h1>{title}</h1>
-      <h2>{description}</h2>
-      <PrintMarkdown markdown={content} />
+      {allPosts.map(post => {
+        const { title, description, slug, content } = post
+
+        return (
+          <div className='p-3 mb-3'>
+            <div className='bold'>{title}</div>
+            <div>{description}</div>
+            <div>{slug}</div>
+            <div>{content}</div>
+          </div>
+        )
+      })}
     </div>
   )
 }
 
 export async function getStaticProps () {
-  // Here we're using the getPageContentBySlug
-  // as opposed to getDynamicPageContentBySlug
-  // We're also passing in the string 'home' to tell it
-  // we want to use the _pages/home.md file for the
-  // page props
-  const page = getPageContentBySlug('home', [
+  const allPosts = getAllPosts([
     'title',
-    'description',
+    'date',
     'slug',
-    'content'
+    'author',
+    'coverImage',
+    'excerpt'
   ])
 
   return {
-    props: {
-      page: {
-        ...page
-      }
-    }
+    props: { allPosts }
   }
 }

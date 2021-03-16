@@ -1,8 +1,8 @@
-import PrintMarkdown from '../components/markdown/PrintMarkdown'
+import PrintMarkdown from '../../components/markdown/PrintMarkdown'
 import {
   getDynamicPageContentBySlug,
   getAllDynamicPages
-} from '../lib/markdown'
+} from '../../lib/markdown'
 
 export default function DynamicPage ({ page }) {
   const { title, description, slug, content } = page
@@ -37,15 +37,39 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-export async function getStaticPaths () {
-  const posts = getAllDynamicPages(['slug'])
-  const paths = posts.map(({ slug }) => ({
-    params: {
-      slug
-    }
-  }))
+export async function getStaticProps ({ params }) {
+  const post = getPostBySlug(params.slug, [
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+    'ogImage',
+    'coverImage'
+  ])
+  const content = await markdownToHtml(post.content || '')
+
   return {
-    paths,
+    props: {
+      post: {
+        ...post,
+        content
+      }
+    }
+  }
+}
+
+export async function getStaticPaths () {
+  const posts = getAllPosts(['slug'])
+
+  return {
+    paths: posts.map(post => {
+      return {
+        params: {
+          slug: post.slug
+        }
+      }
+    }),
     fallback: false
   }
 }
