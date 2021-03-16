@@ -1,25 +1,24 @@
-import PrintMarkdown from '../components/markdown/PrintMarkdown'
-import {
-  getDynamicPageContentBySlug,
-  getAllDynamicPages,
-  getPageContentBySlug
-} from '../lib/markdown'
 import { getAllPosts } from '../lib/api'
+import Link from 'next/link'
 
 export default function IndexPage (props) {
   const { allPosts } = props
 
   return (
     <div>
-      {allPosts.map(post => {
+      {allPosts.map((post, i) => {
         const { title, description, slug, content } = post
+        console.log(post)
 
         return (
-          <div className='p-3 mb-3'>
+          <div className='p-3 mb-3' key={`${i}-${title}`}>
             <div className='bold'>{title}</div>
             <div>{description}</div>
-            <div>{slug}</div>
             <div>{content}</div>
+
+            <div className='bg-blue-500 px-3 py-2'>
+              <Link href={`posts/${slug}`}>{`posts/${slug}`}</Link>
+            </div>
           </div>
         )
       })}
@@ -28,14 +27,17 @@ export default function IndexPage (props) {
 }
 
 export async function getStaticProps () {
-  const allPosts = getAllPosts([
+  const fields = [
     'title',
     'date',
+    'description',
     'slug',
     'author',
     'coverImage',
     'excerpt'
-  ])
+  ]
+
+  const allPosts = getAllPosts(fields)
 
   return {
     props: { allPosts }
