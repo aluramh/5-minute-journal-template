@@ -16,9 +16,9 @@ export default function IndexPage (props) {
             <div>{description}</div>
             <div>{content}</div>
 
-            <div className='bg-blue-500 px-3 py-2'>
+            <button className='bg-blue-500 px-3 py-2 text-white rounded-sm hover:bg-blue-600 transition'>
               <Link href={`posts/${slug}`}>{`posts/${slug}`}</Link>
-            </div>
+            </button>
           </div>
         )
       })}
