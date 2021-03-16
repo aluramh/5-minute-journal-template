@@ -9,10 +9,13 @@ class MyDocument extends Document {
   render () {
     return (
       <Html lang='en'>
-        <Head />
+        <Head>
+          {/* <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script> */}
+        </Head>
         <body>
           <Main />
           <NextScript />
+          {/* <script src='https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js'></script> */}
         </body>
       </Html>
     )
