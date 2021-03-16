@@ -4,7 +4,7 @@ backend:
   # to view Netlify CMS locally (you can't make changes or read actual content from Git
   # this way, but it's great to verify how things will look).
   name: git-gateway
-  branch: master
+  branch: main
 media_folder: public/img
 public_folder: img
 collections:
