@@ -1,45 +1,53 @@
 import { useRouter } from 'next/router'
+import { getPostBySlug, getAllPosts } from '../../lib/api'
+import markdownToHtml from '../../lib/markdownToHtml'
+import { CMS_NAME } from '../../lib/constants'
+
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import Container from '../../components/Container'
-
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import markdownToHtml from '../../lib/markdownToHtml'
-import { CMS_NAME } from '../../lib/constants'
+import Header from '../../components/Header'
+import PostHeader from '../../components/Post/Header'
+import PostBody from '../../components/Post/Body'
+import PostTitle from '../../components/Post/Title'
 
 export default function Post (props) {
   const { post, morePosts, preview } = props
   const router = useRouter()
 
-  console.log({ props })
-
-  console.log([router.isFallback, post, post.slug])
-
   if (!router.isFallback && !post && !post.slug) {
     return <ErrorPage statusCode={404} />
   }
 
+  const metaImage = post && post.ogImage && post.ogImage.url && (
+    <meta property='og:image' content={post.ogImage.url} />
+  )
+
   return (
     <Layout preview={preview}>
       <Container>
+        <Header />
         {router.isFallback ? (
-          <div>Loading…</div>
+          <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <Head>
-              <title>
-                {post.title} | Next.js Blog Example with {CMS_NAME}
-              </title>
-              <meta property='og:image' content={post.ogImage.url} />
-            </Head>
-            <div>
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            </div>
-            <article className='prose mb-32'>{post.content}</article>
+            <article className='mb-32'>
+              <Head>
+                <title>
+                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                </title>
+                {metaImage}
+              </Head>
+
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                author={post.author}
+              />
+              <PostBody content={post.content} />
+            </article>
           </>
         )}
       </Container>

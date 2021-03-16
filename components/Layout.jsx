@@ -1,12 +1,14 @@
-import clsx from 'clsx'
-import React from 'react'
+import Footer from '../components/footer'
+import Meta from '../components/meta'
 
-const Layout = ({ children, className, ...props }) => {
+export default function Layout ({ preview, children }) {
   return (
-    <div className={clsx([className])} {...props}>
-      {children}
-    </div>
+    <>
+      <Meta />
+      <div className='min-h-screen'>
+        <main>{children}</main>
+      </div>
+      <Footer />
+    </>
   )
 }
-
-export default Layout
