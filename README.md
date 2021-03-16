@@ -9,3 +9,6 @@ https://www.netlifycms.org/docs/nextjs/#publishing-to-github-and-netlify
 
 To read more on NextJS deployments on Netlify, read here:
 https://www.netlify.com/blog/2020/11/30/how-to-deploy-next.js-sites-to-netlify/
+
+NetlifyCMS config:
+https://github.com/netlify/netlify-cms/blob/master/dev-test/config.yml
