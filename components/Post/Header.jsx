@@ -8,6 +8,7 @@ export default function PostHeader ({ title, coverImage, date, author }) {
 
       <div className='max-w-2xl mx-auto'>
         <div className='mb-6 text-lg'>
+          {date}
           {/* <DateFormatter dateString={date} /> */}
         </div>
       </div>
