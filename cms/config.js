@@ -26,7 +26,7 @@ export default {
           default: 'blog-post'
         },
         { label: 'Title', name: 'title', widget: 'string' },
-        { label: 'Publish Date', name: 'date', widget: 'datetime' },
+        { label: 'Publish Date', name: 'date', widget: 'date' },
         { label: 'Description', name: 'description', widget: 'text' },
         {
           label: 'Featured Post',
@@ -40,8 +40,8 @@ export default {
           widget: 'image',
           required: false
         },
-        { label: 'Body', name: 'body', widget: 'markdown' },
-        { label: 'Tags', name: 'tags', widget: 'list' }
+        { label: 'Body', name: 'body', widget: 'markdown', required: false },
+        { label: 'Tags', name: 'tags', widget: 'list', required: false }
       ]
     }
   ]
