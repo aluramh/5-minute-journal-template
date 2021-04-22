@@ -6,5 +6,8 @@ module.exports = {
       options: { mode: ['react-component'] }
     })
     return cfg
+  },
+  future: {
+    webpack5: true
   }
 }

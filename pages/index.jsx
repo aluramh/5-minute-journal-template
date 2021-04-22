@@ -1,6 +1,8 @@
 import { getAllPosts } from '../lib/api'
 import Link from 'next/link'
 import BlogCard from '../components/BlogCard'
+import Navbar from '../components/Navbar'
+import MainBanner from '../components/MainBanner'
 
 export default function IndexPage (props) {
   const { allPosts } = props
@@ -8,12 +10,19 @@ export default function IndexPage (props) {
   const restOfPosts = allPosts.slice(1)
 
   return (
-    <div className='container mx-auto'>
-      <div className='text-2xl mb-2'>Latest post:</div>
-      <BlogCard post={newestPost} featured />
-      {restOfPosts.map((post, i) => (
-        <BlogCard post={post} key={post.title} />
-      ))}
+    <div>
+      <MainBanner />
+
+      <div className='container mx-auto px-3 md:px-0 lg:w-2/3 xl:w-2/4'>
+        {/* Title of section */}
+        <div className='font-sans text-5xl font-bold mb-6'>Latest posts</div>
+
+        {/* Posts */}
+        <BlogCard post={newestPost} featured />
+        {restOfPosts.map((post, i) => (
+          <BlogCard post={post} key={post.title} />
+        ))}
+      </div>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Navbar from '../components/Navbar'
 
 class MyDocument extends Document {
   static async getInitialProps (ctx) {
@@ -12,7 +13,8 @@ class MyDocument extends Document {
         <Head>
           {/* <script src='https://identity.netlify.com/v1/netlify-identity-widget.js'></script> */}
         </Head>
-        <body className='bg-red-50'>
+        <body className='antialiased bg-red-50'>
+          <Navbar />
           <Main />
           <NextScript />
           {/* <script src='https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js'></script> */}
