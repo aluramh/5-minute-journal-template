@@ -4,12 +4,12 @@ import React from 'react'
 const MainBanner = () => {
   return (
     <div
-      class={clsx(
+      className={clsx(
         'min-w-screen flex items-center justify-center',
-        'md:min-h-0 mb-24'
+        'md:min-h-0'
       )}
     >
-      <div class='w-full bg-white border-t border-b border-gray-200 px-5 py-16 md:py-24 text-gray-800 font-light'>
+      <div className='w-full bg-white border-t border-b border-gray-200 px-5 py-16 md:py-24 text-gray-800 font-light'>
         <div className='w-full max-w-6xl mx-auto pb-5'>
           <div className='-mx-3 md:flex items-center'>
             {/* Left-hand side */}

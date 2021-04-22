@@ -13,9 +13,9 @@ export default function IndexPage (props) {
     <div>
       <MainBanner />
 
-      <div className='container mx-auto px-3 md:px-0 lg:w-2/3 xl:w-2/4'>
-        {/* Title of section */}
-        <div className='font-sans text-5xl font-bold mb-6'>Latest posts</div>
+      <div className='container mx-auto px-5 lg:px-0 lg:w-2/3 xl:w-2/4 max-w-6xl'>
+        {/* Title */}
+        <div className='font-sans text-5xl font-bold my-12'>Latest posts</div>
 
         {/* Posts */}
         <BlogCard post={newestPost} featured />
