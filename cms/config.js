@@ -81,7 +81,7 @@ export default {
                   widget: "string",
                 },
                 {
-                  label: "Today would be splendid because...",
+                  label: "Today will be splendid if...",
                   name: "today-great-2",
                   widget: "string",
                 },
