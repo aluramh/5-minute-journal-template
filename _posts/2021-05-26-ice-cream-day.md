@@ -17,5 +17,5 @@ after-day:
     grateful-thing-2: Got some!
     grateful-thing-3: Got some work done!
   today-better: " Didn't spend so much time playing smash."
-start: May 25, 2021 10:24 PM
+date: May 25, 2021 10:24 PM
 ---

@@ -17,5 +17,5 @@ after-day:
     grateful-thing-2: " "
     grateful-thing-3: " "
   today-better: " "
-start: May 26, 2021 10:04 AM
+date: May 26, 2021 10:04 AM
 ---

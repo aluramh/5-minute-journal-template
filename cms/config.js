@@ -153,8 +153,8 @@ export default {
 
         // Today's date
         {
-          label: "Start time",
-          name: "start",
+          label: "Today's date",
+          name: "date",
           widget: "datetime",
           date_format: "DD-MMM-YYYY",
           format: "LLL",
