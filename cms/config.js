@@ -1,12 +1,13 @@
+// NOTE: - If you want to test changes made to your config.yml file locally,
+// swap out "git-gateway" with "test-repo" and navigate to localhost:3000/admin
+// to view Netlify CMS locally (you can't make changes or read actual content from Git
+// this way, but it's great to verify how things will look).
+const backendName = "git-gateway";
+
 export default {
   cms_manual_init: true,
   backend: {
-    // NOTE: - If you want to test changes made to your config.yml file locally,
-    // swap out "git-gateway" with "test-repo" and navigate to localhost:3000/admin
-    // to view Netlify CMS locally (you can't make changes or read actual content from Git
-    // this way, but it's great to verify how things will look).
-    name: "test-repo",
-    // name: 'git-gateway',
+    name: backendName,
     branch: "main",
   },
   media_folder: "public/img",
@@ -48,8 +49,7 @@ export default {
               label: "I am grateful for...",
               name: "i-am-grateful-for",
               widget: "object",
-              hint:
-                "Things I am grateful for today. There are always at least 3 things to be thankful for every day.",
+              hint: "Things I am grateful for today. There are always at least 3 things to be thankful for every day.",
               fields: [
                 {
                   label: "The 1st thing I am grateful for is...",
@@ -98,8 +98,7 @@ export default {
               label: "Daily affirmation. I am...",
               name: "daily-affirmation",
               widget: "string",
-              hint:
-                "This is the place where you can brag about how amazing you are!",
+              hint: "This is the place where you can brag about how amazing you are!",
             },
           ],
         },
@@ -167,8 +166,7 @@ export default {
           name: "featuredimage",
           widget: "image",
           required: false,
-          hint:
-            "If you believe there is an image that captures the essence of today, you can add it here",
+          hint: "If you believe there is an image that captures the essence of today, you can add it here",
         },
         {
           label: "Tags",
