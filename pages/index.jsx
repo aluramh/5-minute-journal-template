@@ -6,7 +6,7 @@ import MainBanner from '../components/MainBanner'
 
 export default function IndexPage (props) {
   const { allPosts } = props
-  const newestPost = allPosts[0]
+  // const newestPost = allPosts[0]
   const restOfPosts = allPosts.slice(1)
 
   return (
@@ -18,7 +18,7 @@ export default function IndexPage (props) {
         <div className='font-sans text-5xl font-bold my-12'>Latest posts</div>
 
         {/* Posts */}
-        <BlogCard post={newestPost} featured />
+        {/* <BlogCard post={newestPost} featured /> */}
         {restOfPosts.map((post, i) => (
           <BlogCard post={post} key={post.title} />
         ))}
