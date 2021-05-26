@@ -3,7 +3,7 @@ export type Post = {
   title: string
   'before-day': StartOfDay
   'after-day': EndOfDay
-  start: string // date
+  date: string // date
 }
 
 type StartOfDay = {
