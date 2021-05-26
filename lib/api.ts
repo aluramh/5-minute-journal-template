@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
-import { Post } from './types.d'
+import { ExtendedPost, Post } from './types.d'
 
 const postsDirectory = join(process.cwd(), '_posts')
 
@@ -9,37 +9,33 @@ export function getPostSlugs () {
   return fs.readdirSync(postsDirectory)
 }
 
-export function getPostBySlug (slug: string, fields: string[] = []) {
+export function getPostBySlug (slug: string, fields: (keyof ExtendedPost)[]) {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const payload = matter(fileContents)
+  const payload: any = matter(fileContents)
 
   // Retrieve the data from the fileContents
-  const data = payload.data
+  const data: ExtendedPost = payload.data
   const content = payload.content
-
-  console.log(JSON.stringify(data, null, 2))
 
   const items = {}
 
   // Ensure only the minimal needed data is exposed
-  fields.forEach((field: string) => {
+  fields.forEach(field => {
+    // Name of the .md file
     if (field === 'slug') {
       items[field] = realSlug
     }
 
+    // The content of the file, if there is one
     if (field === 'content') {
       items[field] = content
     }
 
+    // For everything else, add it to the objec t. These are the keys of the .md file itself.
     if (data[field]) {
-      if (field === 'date') {
-        const parsedDate = data[field].toISOString()
-        items[field] = parsedDate
-      } else {
-        items[field] = data[field]
-      }
+      items[field] = data[field]
     }
   })
 

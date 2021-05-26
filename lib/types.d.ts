@@ -1,30 +1,37 @@
 export type Post = {
   templateKey: string
   title: string
-  'before-day': StartOfDay
-  'after-day': EndOfDay
+  dayStart: StartOfDay
+  dayEnd: EndOfDay
   date: string // date
+  image?: string
+  tags?: string[]
 }
 
 type StartOfDay = {
-  'i-am-grateful-for': {
-    'grateful-thing-1': string
-    'grateful-thing-2': string
-    'grateful-thing-3': string
+  iAmGratefulFor: {
+    gratefulThing1: string
+    gratefulThing2: string
+    gratefulThing3: string
   }
-  'today-great': {
-    'today-great-1': string
-    'today-great-2': string
-    'today-great-3': string
+  whatWouldMakeTodayGreat: {
+    todayGreat1: string
+    todayGreat2: string
+    todayGreat3: string
   }
-  'daily-affirmation': string
+  dailyAffirmation: string
 }
 
 type EndOfDay = {
-  'amazing-things': {
-    'grateful-thing-1': string
-    'grateful-thing-2': string
-    'grateful-thing-3': string
+  amazingThingsThatHappened: {
+    amazingThing1: string
+    amazingThing2: string
+    amazingThing3: string
   }
-  'today-better': string
+  couldHaveMadeTodayBetter: string
+}
+
+export interface ExtendedPost extends Post {
+  slug: string
+  content: string
 }

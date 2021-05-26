@@ -16,7 +16,6 @@ export default function IndexPage (props) {
         <div className='font-sans text-5xl font-bold my-12'>Latest posts</div>
 
         {/* Posts */}
-        {/* <BlogCard post={newestPost} featured /> */}
         {allPosts.map((post, i) => (
           <BlogCard post={post} key={post.title} />
         ))}

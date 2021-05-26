@@ -41,30 +41,30 @@ export default {
 
         {
           label: "Before the day starts",
-          name: "before-day",
+          name: "dayStart",
           widget: "object",
           hint: "This are the main things to remember at the start of your day",
           fields: [
             // Grateful things
             {
               label: "I am grateful for...",
-              name: "i-am-grateful-for",
+              name: "iAmGratefulFor",
               widget: "object",
               hint: "Things I am grateful for today. There are always at least 3 things to be thankful for every day.",
               fields: [
                 {
                   label: "The 1st thing I am grateful for is...",
-                  name: "grateful-thing-1",
+                  name: "gratefulThing1",
                   widget: "string",
                 },
                 {
                   label: "The 2nd thing I am grateful for is...",
-                  name: "grateful-thing-2",
+                  name: "gratefulThing2",
                   widget: "string",
                 },
                 {
                   label: "Finally, I am also grateful for...",
-                  name: "grateful-thing-3",
+                  name: "gratefulThing3",
                   widget: "string",
                 },
               ],
@@ -73,22 +73,22 @@ export default {
             // Today would be great if
             {
               label: "What would make today great?",
-              name: "today-great",
+              name: "whatWouldMakeTodayGreat",
               widget: "object",
               fields: [
                 {
                   label: "This would make today great...",
-                  name: "today-great-1",
+                  name: "todayGreat1",
                   widget: "string",
                 },
                 {
                   label: "Today will be splendid if...",
-                  name: "today-great-2",
+                  name: "todayGreat2",
                   widget: "string",
                 },
                 {
                   label: "Last but not least...",
-                  name: "today-great-3",
+                  name: "todayGreat3",
                   widget: "string",
                 },
               ],
@@ -97,7 +97,7 @@ export default {
             // Daily affirmation
             {
               label: "Daily affirmation. I am...",
-              name: "daily-affirmation",
+              name: "dailyAffirmation",
               widget: "string",
               hint: "This is the place where you can brag about how amazing you are!",
             },
@@ -108,32 +108,32 @@ export default {
 
         {
           label: "At the end of the day",
-          name: "after-day",
+          name: "dayEnd",
           widget: "object",
           hint: "Let's recap how you did this extraordinary day",
           fields: [
             // Grateful things
             {
               label: "3 amazing things that happened today",
-              name: "amazing-things",
+              name: "amazingThingsThatHappened",
               widget: "object",
               hint: "Amazing things I things that happened today",
               fields: [
                 {
                   label: "The 1st thing amazing thing was...",
-                  name: "grateful-thing-1",
+                  name: "gratefulThing1",
                   widget: "string",
                   default: " ",
                 },
                 {
                   label: "I was astonished today because...",
-                  name: "grateful-thing-2",
+                  name: "gratefulThing2",
                   widget: "string",
                   default: " ",
                 },
                 {
                   label: "The last astounding thing was...",
-                  name: "grateful-thing-3",
+                  name: "gratefulThing3",
                   widget: "string",
                   default: " ",
                 },
@@ -143,7 +143,7 @@ export default {
             // Today better
             {
               label: "How could I have made today even better?",
-              name: "today-better",
+              name: "couldHaveMadeTodayBetter",
               widget: "string",
               hint: "There is always room to grow and be better",
               default: " ",
