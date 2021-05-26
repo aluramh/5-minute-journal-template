@@ -5,8 +5,8 @@ export default {
     // swap out "git-gateway" with "test-repo" and navigate to localhost:3000/admin
     // to view Netlify CMS locally (you can't make changes or read actual content from Git
     // this way, but it's great to verify how things will look).
-    name: "test-repo",
-    // name: 'git-gateway',
+    // name: "test-repo",
+    name: 'git-gateway',
     branch: "main",
   },
   media_folder: "public/img",
@@ -123,19 +123,19 @@ export default {
                   label: "The 1st thing amazing thing was...",
                   name: "grateful-thing-1",
                   widget: "string",
-                  default: "Come back later and fill out this field",
+                  default: " ",
                 },
                 {
                   label: "I was astonished today because...",
                   name: "grateful-thing-2",
                   widget: "string",
-                  default: "Come back later and fill out this field",
+                  default: " ",
                 },
                 {
                   label: "The last astounding thing was...",
                   name: "grateful-thing-3",
                   widget: "string",
-                  default: "Come back later and fill out this field",
+                  default: " ",
                 },
               ],
             },
@@ -146,7 +146,7 @@ export default {
               name: "today-better",
               widget: "string",
               hint: "There is always room to grow and be better",
-              default: "Come back later and fill out this field",
+              default: " ",
             },
           ],
         },
