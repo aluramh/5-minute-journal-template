@@ -9,7 +9,6 @@ const BlogCard = props => {
     badge,
     tags
   } = props
-  const [highlight, setHighlight] = useState(false)
 
   function getPrettyDate (date) {
     const prettifiedDate = new Date(date).toLocaleDateString('en-US')
@@ -24,7 +23,9 @@ const BlogCard = props => {
   return (
     <div className='max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md'>
       <div className='flex justify-between items-center'>
-        <span className='font-light text-gray-600'>{getPrettyDate(post.date)}</span>
+        <span className='font-light text-gray-600'>
+          {getPrettyDate(post.date)}
+        </span>
 
         {/* Tags */}
         {tags && (
