@@ -7,10 +7,11 @@ import ErrorPage from 'next/error'
 import Head from 'next/head'
 import Layout from '../../components/Layout'
 import Container from '../../components/Container'
-import Header from '../../components/Header'
 import PostHeader from '../../components/Post/Header'
 import PostBody from '../../components/Post/Body'
 import PostTitle from '../../components/Post/Title'
+import DailyQuote from '../../components/DailyQuote'
+import Date from '../../components/Post/Date'
 
 export default function Post (props) {
   const { post, morePosts, preview } = props
@@ -26,13 +27,12 @@ export default function Post (props) {
 
   return (
     <Layout preview={preview}>
-      <Container>
-        <Header />
+      <Container className='mt-3'>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className='mb-32'>
+            <article className='mb-32 max-w-2xl mx-auto'>
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
@@ -40,13 +40,20 @@ export default function Post (props) {
                 {metaImage}
               </Head>
 
+              <Date date={post.date} />
+
+              <DailyQuote className='mb-6' />
+
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
-                date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+
+              <div
+                className='prose'
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
             </article>
           </>
         )}

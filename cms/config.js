@@ -142,7 +142,7 @@ export default {
 
             // Today better
             {
-              label: "How could I have made today better?",
+              label: "How could I have made today even better?",
               name: "today-better",
               widget: "string",
               hint: "There is always room to grow and be better",
