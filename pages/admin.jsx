@@ -2,19 +2,6 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import config from '../cms/config'
 
-const Article = ({ title, children }) => (
-  <article>
-    <h1>{title}</h1>
-    {children}
-  </article>
-)
-
-const ArticlePreview = () => (
-  <Article title='Custom article preview'>
-    <p>This is my new article.</p>
-  </Article>
-)
-
 const CMSAdminPage = dynamic(
   () =>
     import('netlify-cms-app').then(CMS => {

@@ -1,0 +1,110 @@
+/* Obtained from here: https://truongnguyen.io/blog/netlify-cms-mobile-responsive-css#highlighted-post */
+
+@media (max-width: 799px) {
+  .SplitPane {
+    flex-direction: column !important;
+  }
+
+  div[class$="SidebarContainer-card"] {
+    position: static !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+  }
+  .css-v758ki-AppMainContainer,
+  .css-12b66la-AppHeaderContent {
+    min-width: 0 !important;
+  }
+  .css-104dqk8-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton,
+  .css-12yqrwa-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton {
+    margin: 0 !important;
+    padding: 16px 7px !important;
+  }
+  .css-1f7nhiq-CollectionMain {
+    padding-left: 0 !important;
+  }
+  .css-1hvrgvd-CollectionTopContainer-card-cardTop {
+    width: 100% !important;
+  }
+  .css-16b5p1f-ToolbarSectionMain-toolbarSection {
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+  }
+
+  /* Media */
+  .css-1f3mf5k-StyledModal {
+    padding: 15px !important;
+    grid-template-rows: 190px auto !important;
+  }
+  .css-svjxk-SearchContainer {
+    display: block !important;
+    width: 100% !important;
+  }
+  .css-smzvtl-LibraryTop {
+    flex-direction: column !important;
+  }
+  .css-3ifd9s-ActionsContainer {
+    text-align: center !important;
+  }
+  .css-1ih1y1j-LibraryTitle {
+    margin-bottom: 15px !important;
+  }
+  .css-2ptjc9-UpperActionsContainer {
+    display: inline-block !important;
+  }
+  .css-1qukh7n-DownloadButton-button-default-disabled-button {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .css-13rmovq-StyledUploadButton-button-default-disabled-button-gray {
+    margin-left: 10px !important;
+  }
+  .css-1hpjyse-DeleteButton-button-default-disabled-button-lightRed {
+    margin-top: 10px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .css-1s67tkf-InsertButton-button-default-disabled-button-green {
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+  }
+  .css-16796rj-LowerActionsContainer {
+    display: inline-block !important;
+    margin-top: 0 !important;
+  }
+  .css-stmjdx-CardGridContainer {
+    position: static !important;
+    overflow: visible !important;
+    width: 100% !important;
+    padding-top: 20px !important;
+  }
+  /* End Media */
+
+  /* Blog */
+  .css-hn3jn7-EditorContainer {
+    min-width: 0 !important;
+    width: 120% !important;
+    padding-top: 100px !important;
+  }
+  .css-2oej7z-ToolbarContainer {
+    height: 100px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .css-osnbqe-ToolbarToggle {
+    flex-direction: column !important;
+  }
+
+  .Pane.vertical.Pane1 {
+    width: 100% !important;
+  }
+
+  .Resizer.vertical {
+    display: none;
+  }
+
+  .Pane.vertical.Pane2 {
+    /* width: 100% !important; */
+    display: none;
+  }
+  /* End Blog */
+}

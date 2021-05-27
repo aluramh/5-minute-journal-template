@@ -3,7 +3,7 @@
 // to view Netlify CMS locally (you can't make changes or read actual content from Git
 // this way, but it's great to verify how things will look).
 const backendName = "git-gateway";
-// const backendName = "test-repo"
+// const backendName = "test-repo";
 
 export default {
   cms_manual_init: true,
